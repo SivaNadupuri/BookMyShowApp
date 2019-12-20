@@ -21,7 +21,7 @@ public class BookMyShowApplication {
 	@Autowired
 	private RestTemplate template;
 
-	@HystrixCommand(groupKey = "java techie", commandKey = "java techie", fallbackMethod = "bookMyShowFallBack")
+	@HystrixCommand(groupKey = "Test", commandKey = "Test", fallbackMethod = "bookMyShowFallBack")
 	@GetMapping("/bookNow")
 	public String bookShow() {
 		String emailServiceResponse = template.getForObject("http://localhost:8181/emailService/send", String.class);
